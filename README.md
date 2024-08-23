@@ -5,6 +5,18 @@
 Implemented a sample program to display colored triangle (with self-spin effect)
 as well as circles (with tessellation shaders). 
 
+## Dependencies
+
+- C/C++:
+  - OpenGL
+  - glad
+  - libglm
+  - libglfw-dev
+- Python (from PyPI):
+  - PyOpenGL
+  - PyGLM
+  - PyGLFW (named `glfw` in PyPI)
+
 ## Compile & Run
 
 Execute the following commands in the same directory of this README: 
