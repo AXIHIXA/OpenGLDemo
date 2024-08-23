@@ -8,13 +8,22 @@ as well as circles (with tessellation shaders).
 ## Compile & Run
 
 Execute the following commands in the same directory of this README: 
+
+- C/C++ Version: 
 ```bash
+cd cpp
 mkdir build
 cd build
 cmake -DMAKE_BUILD_TYPE=Release ..
 make 
 cd ..
 ./build/OpenGLDemo
+```
+- Python Version:
+```bash
+cd py
+conda activate py3
+python main.py
 ```
 
 ## Usage
