@@ -1,3 +1,5 @@
+import copy
+
 from OpenGL.GL import *
 from glfw.GLFW import *
 from glfw import _GLFWwindow as GLFWwindow
@@ -118,8 +120,10 @@ class App(Window):
 
         if app.mousePressed:
             # # Note: Must calculate offset first, then update lastMouseLeftPressPos.
+            # # Also must invoke copy explicitly. 
+            # # C++: copy assign is copy; Python: it's reference!
             # glm::dvec2 offset = app.mousePos - app.lastMouseLeftPressPos;
-            app.lastMouseLeftPressPos = app.mousePos;
+            app.lastMouseLeftPressPos = copy.deepcopy(app.mousePos)
     
     @staticmethod
     def __framebufferSizeCallback(window: GLFWwindow, width: int, height: int) -> None:
@@ -139,14 +143,17 @@ class App(Window):
         if button == GLFW_MOUSE_BUTTON_LEFT:
             if action == GLFW_PRESS:
                 app.mousePressed = True
-                app.lastMouseLeftClickPos = app.mousePos
-                app.lastMouseLeftPressPos = app.mousePos
+                app.lastMouseLeftClickPos = copy.deepcopy(app.mousePos)
+                app.lastMouseLeftPressPos = copy.deepcopy(app.mousePos)
                 
+                if app.debugMousePos:
+                    print(f'mouseLeftPress @ {app.mousePos}')
+
             elif action == GLFW_RELEASE:
                 app.mousePressed = False
 
                 if app.debugMousePos:
-                    print(app.mousePos)
+                    print(f'mouseLeftRelease @ {app.mousePos}')
     
     @staticmethod
     def __scrollCallback(window: GLFWwindow, xoffset: float, yoffset: float) -> None:

@@ -1,3 +1,4 @@
+import copy
 import ctypes
 
 from OpenGL.GL import *
@@ -19,7 +20,7 @@ class Triangle(GLShape, Renderable):
                'each five glm.flost32s constitute a vertex (x, y, r, g, b)'
         
         super().__init__(shader, model)
-        self.vertices: glm.array = vertices
+        self.vertices: glm.array = copy.deepcopy(vertices)
         
         glBindVertexArray(self.vao);
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo);

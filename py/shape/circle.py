@@ -1,3 +1,4 @@
+import copy
 import ctypes
 
 from OpenGL.GL import *
@@ -18,7 +19,7 @@ class Circle(GLShape, Renderable):
                'each three glm.flost32s constitute a circle (x, y, r)'
               
         super().__init__(shader)
-        self.parameters: glm.array = parameters
+        self.parameters: glm.array = copy.deepcopy(parameters)
         
         glBindVertexArray(self.vao)
         glBindBuffer(GL_ARRAY_BUFFER, self.vbo)
