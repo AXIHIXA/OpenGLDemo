@@ -1,5 +1,3 @@
-from typing import Optional
-
 from OpenGL.GL import *
 from glfw.GLFW import *
 from glfw import _GLFWwindow as GLFWwindow
