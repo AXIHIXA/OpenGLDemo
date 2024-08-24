@@ -4,8 +4,8 @@ from glfw import _GLFWwindow as GLFWwindow
 import glm
 
 from .window import Window
-from shape import Renderable, Triangle, Circle
-from shader import Shader
+from shape import Circle, Renderable, Triangle
+from util import Shader
 
 
 class App(Window):

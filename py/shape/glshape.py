@@ -5,7 +5,7 @@ STOP. You should not modify this file unless you KNOW what you are doing.
 from OpenGL.GL import *
 import glm
 
-from shader import Shader
+from util import Shader
 
 
 

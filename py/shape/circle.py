@@ -5,7 +5,7 @@ import glm
 
 from .glshape import GLShape
 from .renderable import Renderable
-from shader import Shader
+from util import Shader
 
 
 class Circle(GLShape, Renderable):
