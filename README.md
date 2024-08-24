@@ -7,15 +7,16 @@ as well as circles (with tessellation shaders).
 
 ## Dependencies
 
-- C/C++:
-  - OpenGL
-  - glad
-  - libglm
-  - libglfw-dev
+- C/C++: 
+  - [GLAD](https://glad.dav1d.de/)
+  - Remaining dependencies could be installed via apt:
+```
+apt install libopencv-dev libglm-dev libglew-dev libglfw3-dev mesa-utils libx11-dev libxi-dev libxrandr-dev
+```
 - Python (from PyPI):
-  - PyOpenGL
-  - PyGLM
-  - PyGLFW (named `glfw` in PyPI)
+```
+pip install PyOpenGL PyGLM glfw
+```
 
 ## Compile & Run
 
