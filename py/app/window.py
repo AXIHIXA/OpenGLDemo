@@ -18,7 +18,7 @@ class Window:
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE)
         glfwWindowHint(GLFW_RESIZABLE, False)
         
-        self.window = glfwCreateWindow(width, height, title, None, None)
+        self.window: GLFWwindow = glfwCreateWindow(width, height, title, None, None)
         
         if self.window is None:
             glfwTerminate()
