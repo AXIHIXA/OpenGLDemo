@@ -16,6 +16,7 @@ class Window:
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4)
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1)
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE)
+        glfwWindowHint(GLFW_RESIZABLE, GL_FALSE)
         
         self.window = glfwCreateWindow(width, height, title, None, None)
         
@@ -28,5 +29,3 @@ class Window:
     def __del__(self):
         glfwDestroyWindow(self.window)
         glfwTerminate()
-
-        
