@@ -2,6 +2,8 @@
 STOP. You should not modify this file unless you KNOW what you are doing.
 """
 
+import copy
+
 from OpenGL.GL import *
 import glm
 
@@ -21,7 +23,7 @@ class GLShape:
         self.shader: Shader = shader
         self.vao: int = glGenVertexArrays(1)
         self.vbo: int = glGenBuffers(1)
-        self.model: glm.mat3 = model
+        self.model: glm.mat3 = copy.deepcopy(model)
     
     def __del__(self):
         glDeleteVertexArrays(1, (self.vao,))
