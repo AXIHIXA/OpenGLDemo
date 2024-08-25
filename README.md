@@ -7,14 +7,23 @@ as well as circles (with tessellation shaders).
 
 ## Dependencies
 
-- C/C++: 
+- OpenGL:
+```bash
+sudo add-apt-repository ppa:kisak/kisak-mesa
+sudo apt update
+sudo apt-get dist-upgrade
+sudo reboot
+```
+- C/C++ Version: 
   - [GLAD](https://glad.dav1d.de/)
+    - Configuration w.r.t. results of `sudo glxinfo | grep "OpenGL`
+    - Command `glxinfo` needs `mesa-utils`
   - Remaining dependencies could be installed via apt:
-```
-apt install libopencv-dev libglm-dev libglew-dev libglfw3-dev mesa-utils libx11-dev libxi-dev libxrandr-dev
-```
-- Python (from PyPI):
-```
+  ```bash
+  apt install libopencv-dev libglm-dev libglew-dev libglfw3-dev mesa-utils libx11-dev libxi-dev libxrandr-dev
+  ```
+- Python Version (from PyPI):
+```bash
 pip install PyOpenGL PyGLM glfw
 ```
 
@@ -33,6 +42,7 @@ cd ..
 ./build/OpenGLDemo
 ```
 - Python Version:
+  - Replace "py3" with your own conda env name.
 ```bash
 cd py
 conda activate py3
