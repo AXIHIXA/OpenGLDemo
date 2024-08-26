@@ -41,8 +41,7 @@ make
 cd ..
 ./build/OpenGLDemo
 ```
-- Python Version:
-  - Replace "py3" with your own conda env name.
+- Python Version: Replace "py3" with your own conda env name.
 ```bash
 cd py
 conda activate py3
