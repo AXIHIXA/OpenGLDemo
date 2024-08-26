@@ -7,14 +7,14 @@ as well as circles (with tessellation shaders).
 
 ## Dependencies
 
-- OpenGL:
+- OpenGL (Required for Both Versions):
 ```bash
 sudo add-apt-repository ppa:kisak/kisak-mesa
 sudo apt update
 sudo apt-get dist-upgrade
 sudo reboot
 ```
-- C/C++ Version: 
+- Further Needed for the C/C++ Version: 
   - [GLAD](https://glad.dav1d.de/)
     - Configuration w.r.t. results of `sudo glxinfo | grep "OpenGL`
     - Command `glxinfo` needs `mesa-utils`
@@ -22,18 +22,15 @@ sudo reboot
   ```bash
   apt install libopencv-dev libglm-dev libglew-dev libglfw3-dev mesa-utils libx11-dev libxi-dev libxrandr-dev
   ```
-- Python Version (from PyPI):
+- Further Needed for the Python Version (from PyPI):
 ```bash
 pip install PyOpenGL PyGLM glfw
 ```
 
 ## Compile & Run
 
-Execute the following commands in the same directory of this README: 
-
-- C/C++ Version: 
+- C/C++ Version (Run inside `cpp/`): 
 ```bash
-cd cpp
 mkdir build
 cd build
 cmake -DMAKE_BUILD_TYPE=Release ..
@@ -41,9 +38,8 @@ make
 cd ..
 ./build/OpenGLDemo
 ```
-- Python Version: Replace "py3" with your own conda env name.
+- Python Version. Run inside `py/`, and replace "py3" with your own conda env name:
 ```bash
-cd py
 conda activate py3
 python main.py
 ```
